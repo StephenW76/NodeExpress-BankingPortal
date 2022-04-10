@@ -36,7 +36,7 @@ app.get("/credit", (req, res) => {
     res.render("account", {accounts: accounts.credit});
 });
 app.get("/checking", (req, res) => {
-    res.render("account", {taccounts: accounts.checking});
+    res.render("account", {accounts: accounts.checking});
 });
 
 app.listen(3000, ()=> {
