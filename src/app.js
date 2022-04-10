@@ -30,13 +30,13 @@ app.get("/profile", (req, res) => {
 });
 
 app.get("/savings", (req, res) => {
-    res.render("account", {accounts: accounts.savings});
+    res.render("account", {account: accounts.savings});
 });
 app.get("/credit", (req, res) => {
-    res.render("account", {accounts: accounts.credit});
+    res.render("account", {account: accounts.credit});
 });
 app.get("/checking", (req, res) => {
-    res.render("account", {accounts: accounts.checking});
+    res.render("account", {account: accounts.checking});
 });
 
 app.listen(3000, ()=> {
