@@ -55,7 +55,7 @@ app.post("/transfer", (req, res) => {
     let newFromAccountBalance = fromAccountBalance - amount;
     let newToAccountBalance = toAccountBalance + amount;
 
-    accounts[FromAccount].balance = newFromAccountBalance;
+    accounts[fromAccount].balance = newFromAccountBalance;
     accounts[toAccount].balance = newToAccountBalance;
 
     let accountsJSON = JSON.stringify(accounts);
