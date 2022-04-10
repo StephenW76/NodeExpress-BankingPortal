@@ -46,7 +46,7 @@ app.get("/transfer", (req, res) => {
 app.post("/transfer", (req, res) => {
     const fromAccount = req.body.from;
     const toAccount = req.body.to;
-    const fromAccountBalance = parseint(accounts[fromAccount].balance);
+    const fromAccountBalance = parseInt(accounts[fromAccount].balance);
     const toAccountBalance = parseInt(accounts[toAccount].balance)
     const amount = req.body.amount;
     let newFromAccountBalance = fromAccountBalance - amount;
@@ -65,8 +65,8 @@ app.post("/transfer", (req, res) => {
 
 app.post("/payment", (req, res) => {
     const amount = req.body.amount;
-    accounts.credit.balance = parseint(accounts.credit.balance) - parseint(amount);
-    accounts.credit.available = parseint(accounts.credit.available) + parseint(amount);
+    accounts.credit.balance = parseInt(accounts.credit.balance) - parseInt(amount);
+    accounts.credit.available = parseInt(accounts.credit.available) + parseInt(amount);
 
     let accountsJSON = JSON.stringify(accounts);
     fs.writeFileSync(path.join(__dirname+'/json/accounts.json'), accountsJSON, {encoding: 'UTF8'});
