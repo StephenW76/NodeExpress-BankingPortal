@@ -42,6 +42,9 @@ app.get("/checking", (req, res) => {
 app.get("/transfer", (req, res) => {
     res.render("transfer");
 });
+app.get("/payment", (req, res) => {
+    res.render("payment", {account: accounts.credit});
+});
 
 app.post("/transfer", (req, res) => {
     const fromAccount = req.body.from;
