@@ -13,4 +13,4 @@ router.get("/checking", (req, res) => {
     res.render("account", {account: accounts.checking});
 });
 
-module.exports = {router};
+module.exports = router;
