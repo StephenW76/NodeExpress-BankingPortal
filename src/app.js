@@ -3,7 +3,8 @@ const express = require('express');
 const path = require('path');
 const { render } = require('express/lib/response');
 const { accounts, users, writeJSON } = require('./data');
-
+const {accountRoutes} = require("./routes/accounts");
+const {servicesRoutes} = require("./routes/services");
 const app = express();
 
 
@@ -31,6 +32,11 @@ app.get("/profile", (req, res) => {
     res.render("profile", {user: users[0]});
 });
 
+app.use(accountRoutes,"/account");
+app.use(servicesRoutes,"/services");
+
+
+/** 
 app.get("/savings", (req, res) => {
     res.render("account", {account: accounts.savings});
 });
@@ -40,6 +46,7 @@ app.get("/credit", (req, res) => {
 app.get("/checking", (req, res) => {
     res.render("account", {account: accounts.checking});
 });
+
 app.get("/transfer", (req, res) => {
     res.render("transfer");
 });
@@ -79,6 +86,7 @@ app.post("/payment", (req, res) => {
 
 
 });
+**/
 app.listen(3000, ()=> {
     console.log('PS Project Running on port 3000!');
 });
